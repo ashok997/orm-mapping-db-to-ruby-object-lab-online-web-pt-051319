@@ -110,8 +110,8 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
-    
-    self.new_from_db(DB[:conn].execute(sql).flatten)
+    data =DB[:conn].execute(sql)
+    self.new_from_db(data.flatten)
   end
   
   def self.all_students_in_grade_X(num)
